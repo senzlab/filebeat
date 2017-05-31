@@ -1,0 +1,14 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/*.log
+      input_type: log
+
+output:
+  #elasticsearch:
+    #template.enabled: false
+    #index: "msg"
+    #hosts: ["dev.localhost:9200"]
+  logstash:
+    hosts: ["dev.localhost:5044"]
