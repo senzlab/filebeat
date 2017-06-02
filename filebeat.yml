@@ -4,11 +4,14 @@ filebeat:
       paths:
         - /var/log/*.log
       input_type: log
+      #include_lines: ["/ERROR/", "/WARN", "/INFO"]
+      exclude_lines: ["/DEBUG/"]
+      document_type: service
 
 output:
-  #elasticsearch:
-    #template.enabled: false
-    #index: "msg"
-    #hosts: ["dev.localhost:9200"]
+#  elasticsearch:
+#    template.enabled: false
+#    index: "msg"
+#    hosts: ["dev.localhost:9200"]
   logstash:
     hosts: ["dev.localhost:5044"]
