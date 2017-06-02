@@ -6,7 +6,7 @@ filebeat:
       input_type: log
       #include_lines: ["/ERROR/", "/WARN", "/INFO"]
       exclude_lines: ["/DEBUG/"]
-      document_type: service
+      document_type: senz
 
 output:
 #  elasticsearch:
